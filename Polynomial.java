@@ -1,6 +1,7 @@
 import java.lang.Math;
 import java.io.*;
 import java.io.BufferedReader;
+import java.io.File;
 
 public class Polynomial {
     public double [] co; //change it to private!!!!
@@ -125,9 +126,9 @@ public class Polynomial {
         String [] terms = new String[100];
 		int k = 0;
 
-        String[] po = line.split("+");
+        String[] po = line.split("\\+");
         for (int i = 0; i < po.length; i++){
-            String [] ne = po[i].split("-");
+            String [] ne = po[i].split("\\-");
             terms[k] = ne[0];
 			k ++;
 
@@ -175,6 +176,7 @@ public class Polynomial {
 		}
 		newFile.println(x);
 	}
+
 
 
 }

@@ -1,7 +1,8 @@
 import java.util.Arrays;
+import java.io.*;
 
 public class Driver { 
-    public static void main(String [] args) { 
+    public static void main(String [] args) throws IOException { 
    
      double [] c1 = {-1,1}; 
      int [] e1 = {0,1};
@@ -17,7 +18,14 @@ public class Driver {
       System.out.println("1 is a root of s"); 
      else 
       System.out.println("1 is not a root of s"); 
-      
+
+    
+     File f = new File("/Users/chloe/Desktop/b07lab1/test.txt");
+     Polynomial y = new Polynomial(f);
+     System.out.println(Arrays.toString(y.co) + " and " + Arrays.toString(y.ex));
+     
+     String new_f = "/Users/chloe/Desktop/b07lab1/test.txt";
+		 p2.saveToFile(new_f);
       
     } 
    } 
