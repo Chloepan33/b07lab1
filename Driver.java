@@ -1,17 +1,32 @@
+import java.util.Arrays;
+import java.io.*;
+
 public class Driver { 
-    public static void main(String [] args) { 
-     Polynomial p = new Polynomial(); 
-     System.out.println(p.evaluate(3)); 
-     double [] c1 = {6,0,0,5}; 
-     Polynomial p1 = new Polynomial(c1); 
-     double [] c2 = {0,-2,0,0,-9}; 
-     Polynomial p2 = new Polynomial(c2); 
-     Polynomial s = p1.add(p2); 
-     System.out.println("s(0.1) = " + s.evaluate(0.1)); 
-     if(s.hasRoot(1)) 
+    public static void main(String [] args) throws IOException { 
+   
+     double [] c1 = {-1,1}; 
+     int [] e1 = {0,1};
+     Polynomial p1 = new Polynomial(c1,e1); 
+     double [] c2 = {1,1}; 
+     int [] e2 = {0,1};
+     Polynomial p2 = new Polynomial(c2,e2); 
+     Polynomial s1 = p1.add(p2);
+     Polynomial s2 = p1.multiply(p2);
+     System.out.println(Arrays.toString(s2.co) + " and " + Arrays.toString(s2.ex));
+     System.out.println("s(0.1) = " + s1.evaluate(0.1)); 
+     if(s1.hasRoot(1)) 
       System.out.println("1 is a root of s"); 
      else 
       System.out.println("1 is not a root of s"); 
+
+    
+     File f = new File("/Users/chloe/Desktop/b07lab1/test.txt");
+     Polynomial y = new Polynomial(f);
+     System.out.println(Arrays.toString(y.co) + " and " + Arrays.toString(y.ex));
+     
+     String new_f = "/Users/chloe/Desktop/b07lab1/test.txt";
+		 p2.saveToFile(new_f);
+      
     } 
    } 
     
