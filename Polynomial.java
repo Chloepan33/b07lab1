@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 
 public class Polynomial {
-    public double [] co; //change it to private!!!!
-    public int [] ex;
+    private double [] co; //change it to private!!!!
+    private int [] ex;
 
     public Polynomial(){
         co = new double[100];
